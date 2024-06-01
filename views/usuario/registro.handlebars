@@ -1,0 +1,35 @@
+{{#each erros}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<div id="registroarea">
+    <div>
+        <form action="/registrob" method="post">
+            <h4 id="tituloregistro">Registro</h4>
+            <hr>
+            <label for="nome" id="labelnomer">Nome: </label>
+            <input type="text" name="nome" id="nomeregistro">
+            <br>
+            <label for="senha" id="labelsenhar">Senha</label>
+            <input type="password" name="senha" id="senharegistro">
+            <br>
+            <label for="senha2" id="labelsenhar2">Repita a senha</label>
+            <input type="password" name="senha2" id="senharegistro">
+            <br>
+            <label for="tipo" id="labeltipo">Cargo</label>
+            <select name="tipo" id="tiporegistro" value="0">
+                <option value="3">Diretor</option>
+                <option value="2">Administrador</option>
+                <option value="1">Professor</option>
+                <option value="1">Tecnico</option>
+                <option value="1">Manutenção</option>
+            </select>
+            <br>
+
+            <button type="submit" id="btn-criar"> Criar </button>
+            <a href="/login"><button type="button" id="btn-logar"> Login</button></a>
+        </form>
+    </div>
+</div>

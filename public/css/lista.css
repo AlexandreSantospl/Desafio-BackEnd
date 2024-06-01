@@ -1,0 +1,14 @@
+body{
+    background-color:rgb(252, 247, 223);
+    /*background-image: linear-gradient( to right, rgb(248, 226, 197), rgb(245, 245, 193) ); */
+}
+
+.card-body{
+    background-color:rgb(252, 242, 229);
+    border-radius: 10px;
+    border-color: black;
+}
+
+.card{
+    background-color: rgb(252, 242, 229);
+}

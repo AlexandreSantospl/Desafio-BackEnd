@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-body" style="display: flex; margin-left: 20px; gap: 230px; height: 60px">
+        <hr>
+        <h6 style="font-size: 16pt;">Nome</h6>
+        <h6 style="font-size: 16pt;">Status</h6>
+        <h6 style="font-size: 16pt;">Data de Entrega</h6>
+        <hr>
+    </div>
+
+</div>
+
+{{#each pedidos}}
+
+<a href="/admin/pedido/editar/{{_id}}" style="text-decoration: none;">
+    <div id="formulario" class="card mt-1">
+        <div class="card-body" style="text-align: center; display: flex; gap: 160px;">
+            <div>
+                <h6 style="margin-left: 220px;">{{nome}}</h6>
+            </div>
+
+            {{#if solicitado}}
+            {{#if etapa}}
+            <div style="display: flex ; width: 900px; position: absolute">
+                <h6 style="margin-left: 533px">{{status}}</h6>
+                <h6 style="margin-left: 265px">{{entrega}}</h6>
+            </div>
+            {{else}}
+            <div style="display: flex; position: absolute">
+                <h6 style="margin-left: 450px; margin-right: 82px">{{status}}</h6>
+                <h6 style="margin-left: 83px">{{entrega}}</h6>
+            </div>
+            {{/if}}
+            {{else}}
+            <div style="display: flex; position: absolute; ">
+                <h6 style="margin-left: 505px;">{{status}}</h6>
+                <h6 style="margin-left: 240px;">{{entrega}}</h6>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</a>
+
+
+{{else}}
+
+{{/each}}

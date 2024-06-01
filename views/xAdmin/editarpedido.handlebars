@@ -1,0 +1,391 @@
+<div>
+    <form action="/admin/pedidoeditar" method="POST">
+        <input type="hidden" value="Aguardando Aprovação da Direção" name="status">
+        <input type="hidden" value="{{pedido._id}}" name="id">
+        <input type="hidden" value="true" name="solicitado">
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+                <label for="produto" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item.nome}}</option>
+                </select>
+
+                <label for="quantidade" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade" type="number" placeholder="{{pedido.quantidade}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade}}">
+
+
+                <label for="loja" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja}}
+                    <option value="{{pedido.loja}}">{{pedido.loja}}</option>
+                    {{else}}
+                    {{/if}}
+
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor" type="number" placeholder="R${{pedido.preco}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+
+            </div>
+        </div>
+
+
+        {{#if pedido.item1.nome}}
+        <br>
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+
+
+                <label for="produto1" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto1" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item1.nome}}</option>
+                </select>
+
+                <label for="quantidade1" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade1" placeholder="{{pedido.quantidade1}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade1}}">
+
+
+                <label for="loja1" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja1" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja1}}
+                    <option value="{{pedido.loja1}}">{{pedido.loja1}}</option>
+                    {{else}}
+                    {{/if}}
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor1" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor1" type="number" placeholder="R${{pedido.preco1}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+            </div>
+        </div>
+        {{else}}
+        {{/if}}
+
+        {{#if pedido.item2.nome}}
+        <br>
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+
+                <label for="produto2" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto2" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item2.nome}}</option>
+                </select>
+
+                <label for="quantidade2" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade2" placeholder="{{pedido.quantidade2}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade2}}">
+
+
+                <label for="loja2" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja2" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja2}}
+                    <option value="{{pedido.loja2}}">{{pedido.loja2}}</option>
+                    {{else}}
+                    {{/if}}
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor2" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor2" type="number" placeholder="R${{pedido.preco2}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+
+
+            </div>
+        </div>
+
+        {{else}}
+        {{/if}}
+
+
+        {{#if pedido.item3.nome}}
+        <br>
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+
+
+                <label for="produto3" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto3" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item3.nome}}</option>
+                </select>
+
+                <label for="quantidade3" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade3" placeholder="{{pedido.quantidade3}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade3}}">
+
+
+                <label for="loja3" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja3" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja3}}
+                    <option value="{{pedido.loja3}}">{{pedido.loja3}}</option>
+                    {{else}}
+                    {{/if}}
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor3" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor3" type="number" placeholder="R${{pedido.preco3}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+
+            </div>
+        </div>
+
+        {{else}}
+        {{/if}}
+
+
+        {{#if pedido.item4.nome}}
+        <br>
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+
+
+                <label for="produto4" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto4" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item4.nome}}</option>
+                </select>
+
+                <label for="quantidade4" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade4" placeholder="{{pedido.quantidade4}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade4}}">
+
+
+                <label for="loja4" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja4" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja4}}
+                    <option value="{{pedido.loja4}}">{{pedido.loja4}}</option>
+                    {{else}}
+                    {{/if}}
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor4" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor4" type="number" placeholder="R${{pedido.preco4}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+
+
+            </div>
+        </div>
+        {{else}}
+        {{/if}}
+
+
+        {{#if pedido.item5.nome}}
+        <br>
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+
+
+
+                <label for="produto5" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto5" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item5.nome}}</option>
+                </select>
+
+                <label for="quantidade5" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade5" placeholder="{{pedido.quantidade5}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade5}}">
+
+
+                <label for="loja5" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja5" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja5}}
+                    <option value="{{pedido.loja5}}">{{pedido.loja5}}</option>
+                    {{else}}
+                    {{/if}}
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor6" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor6" type="number" placeholder="R${{pedido.preco4}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+
+
+            </div>
+        </div>
+        {{else}}
+        {{/if}}
+
+
+        {{#if pedido.item6.nome}}
+        <br>
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+
+
+                <label for="produto6" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto6" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item6.nome}}</option>
+                </select>
+
+                <label for="quantidade6" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade6" placeholder="{{pedido.quantidade6}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade6}}">
+
+
+                <label for="loja6" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja6" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja6}}
+                    <option value="{{pedido.loja6}}">{{pedido.loja6}}</option>
+                    {{else}}
+                    {{/if}}
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor6" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor6" type="number" placeholder="R${{pedido.preco6}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+
+            </div>
+        </div>
+        {{else}}
+        {{/if}}
+
+
+        {{#if pedido.item7.nome}}
+        <br>
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+
+
+
+                <label for="produto7" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto7" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item7.nome}}</option>
+                </select>
+
+                <label for="quantidade7" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade7" placeholder="{{pedido.quantidade7}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade7}}">
+
+
+                <label for="loja7" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja7" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja7}}
+                    <option value="{{pedido.loja7}}">{{pedido.loja7}}</option>
+                    {{else}}
+                    {{/if}}
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor7" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor7" type="number" placeholder="R${{pedido.preco7}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+
+
+            </div>
+        </div>
+        {{else}}
+        {{/if}}
+
+
+        {{#if pedido.item8.nome}}
+        <br>
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+
+
+                <label for="produto8" style="font-size: 15pt;  margin-left: 20px;">Produto: </label>
+                <select name="produto8" class="form-select" style="width: 200px;  margin-left: 10px">
+                    <option value="">{{pedido.item8.nome}}</option>
+                </select>
+
+                <label for="quantidade8" style="font-size: 15pt;  margin-left: 20px;">Qntd</label>
+                <input name="quantidade8" placeholder="{{pedido.quantidade8}}" class="form-select"
+                    style="width: 200px; margin-left: 10px; width: 80px" value="{{pedido.quantidade8}}">
+
+
+                <label for="loja8" style="font-size: 15pt;  margin-left: 20px;">Loja: </label>
+                <select name="loja8" class="form-select" style="width: 200px;  margin-left: 10px">
+                    {{#if pedido.loja8}}
+                    <option value="{{pedido.loja8}}">{{pedido.loja8}}</option>
+                    {{else}}
+                    {{/if}}
+                    {{#each lojas}}
+                    <option value="{{nome}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Nenhuma loja registrada</option>
+                    {{/each}}
+                </select>
+
+                <label for="valor8" style="font-size: 15pt; margin-left: 20px;">Valor Und: </label>
+                <input name="valor8" type="number" placeholder="R${{pedido.preco8}},00" class="form-select"
+                    style="width: 200px; margin-left: 10px">
+
+            </div>
+        </div>
+        {{else}}
+        {{/if}}
+
+        <br>
+
+
+        {{#if pedido.finalizado}}
+        {{else}}
+
+        {{#if pedido.etapa}}
+
+        {{else}}
+        <div class="card">
+            <div class="card-body" style="display: flex;">
+                <button type="submit" class="btn btn-success" style="margin-left: 1%; width: 100px">Enviar</button>
+            </div>
+        </div>
+        {{/if}}
+    </form>
+</div>
+
+{{#if pedido.etapa}}
+<div class="card">
+    <div class="card-body" style="display: flex;">
+        <form action="/admin/finalizar" method="post">
+            <input type="hidden" value="{{pedido._id}}" name="id">
+            <input type="hidden" value="Finalizado" name="status">
+            <input type="hidden" value="true" name="finalizado">
+            <button type="submit" class="btn btn-success" style="margin-left: 1%; width: 100px">Entregue</button>
+        </form>
+    </div>
+</div>
+{{else}}
+
+{{/if}}
+
+
+
+{{/if}}
