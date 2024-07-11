@@ -25,21 +25,20 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 #### Ver usuário especifico
 [GET] http://localhost:8081/users/:id
 
-#### Criar usuário
+### Criar usuário
+
 [POST] http://localhost:8081/users/
 
 {
-
-    "nome": "exemplo", // Não pode ter menos que 4 letras
-
-    "email": "exemplo@exemplo",
-
-    "senha": "12345", // As senhas têm que ser iguais
-
-    "senha2": "12345",
-
-    "nivel": 1 | 2 | 3 | 4 | 5
-    
+  "nome": "exemplo", // Não pode ter menos que 4 letras
+  
+  "email": "exemplo@exemplo",
+  
+  "senha": "12345", // As senhas têm que ser iguais
+  
+  "senha2": "12345",
+  
+  "nivel": 1 | 2 | 3 | 4 | 5
 }
 
 
