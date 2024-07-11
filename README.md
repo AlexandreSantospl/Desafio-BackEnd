@@ -42,7 +42,7 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 }
 
 
-#### Editar usuário especifico
+### Editar usuário especifico
 
 [PUT] http://localhost:8081/users/:id
 
@@ -58,12 +58,12 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
   "nivel": 1 | 2 | 3 | 4 | 5
 }
 
-#### Deleta usuário especifico
+### Deleta usuário especifico
 
 [PUT] http://localhost:8081/users/:id
 
 
-#### Faz login
+### Faz login
 
 [POST] http://localhost:8081/login
 
@@ -75,7 +75,7 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 
 (Um token vai ser informado como resposta)
 
-#### Dowload do pdf (Acesso somente nivel 4)
+### Dowload do pdf (Acesso somente nivel 4)
 
 [POST] http://localhost:8081/users/report
 
