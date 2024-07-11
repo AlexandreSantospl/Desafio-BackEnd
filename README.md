@@ -27,12 +27,19 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 
 #### Criar usuário
 [POST] http://localhost:8081/users/
+
 {
+
     "nome": "exemplo", // Não pode ter menos que 4 letras
+
     "email": "exemplo@exemplo",
+
     "senha": "12345", // As senhas têm que ser iguais
+
     "senha2": "12345",
+
     "nivel": 1 | 2 | 3 | 4 | 5
+    
 }
 
 
@@ -53,15 +60,21 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 
 #### Faz login
 [POST] http://localhost:8081/login
+
 {
+
     "email": "exemplo@exemplo",
+
     "senha": "12345"
 }
+
 (Um token vai ser informado como resposta)
 
 #### Dowload do pdf (Acesso somente nivel 4)
 [POST] http://localhost:8081/users/report
-Headers: [key: Authorization] , [valu: Bearer {token}] (token da resposta do login)
+
+Headers: 
+[key: Authorization] , [valu: Bearer {token}] (token da resposta do login)
 
 ------------------------------------------
 
