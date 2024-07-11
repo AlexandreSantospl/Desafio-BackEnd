@@ -6,30 +6,33 @@
 
 <div id="registroarea">
     <div>
-        <form action="/registrob" method="post">
+        <form action="/criarusuario" method="post">
             <h4 id="tituloregistro">Registro</h4>
             <hr>
-            <label for="nome" id="labelnomer">Nome: </label>
+            <label for="nome" id="labelnomer" style="margin-top: 0px;">Nome: </label>
             <input type="text" name="nome" id="nomeregistro">
             <br>
-            <label for="senha" id="labelsenhar">Senha</label>
+            <label for="email" id="labelnomer" style="margin-top: 15px;">Email: </label>
+            <input type="text" name="email" id="senharegistro">
+            <br>
+            <label for="senha" id="labelsenhar" style="margin-top: 15px;">Senha: </label>
             <input type="password" name="senha" id="senharegistro">
             <br>
-            <label for="senha2" id="labelsenhar2">Repita a senha</label>
+            <label for="senha2" id="labelsenhar2" style="margin-top: 15px;">Repita a senha: </label>
             <input type="password" name="senha2" id="senharegistro">
             <br>
-            <label for="tipo" id="labeltipo">Cargo</label>
+            <label for="tipo" id="labeltipo" style="margin-top: 15px;">Nivel: </label>
             <select name="tipo" id="tiporegistro" value="0">
-                <option value="3">Diretor</option>
-                <option value="2">Administrador</option>
-                <option value="1">Professor</option>
-                <option value="1">Tecnico</option>
-                <option value="1">Manutenção</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select>
             <br>
 
             <button type="submit" id="btn-criar"> Criar </button>
-            <a href="/login"><button type="button" id="btn-logar"> Login</button></a>
+            <a href="/dash-login"><button type="button" id="btn-logar"> Login</button></a>
         </form>
     </div>
 </div>

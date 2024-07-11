@@ -1,0 +1,52 @@
+<div id="registroarea">
+    <div>
+        <form action="/editar-usuario/{{usuarios._id}}" method="post">
+            <h4 id="tituloregistro">Edição de Usuario</h4>
+            <hr>
+            <label for="nome" id="labelnomer" style="margin-top: 0px;">Nome: </label>
+            <input type="text" name="nome" id="nomeregistro" placeholder={{usuarios.name}}>
+            <br>
+            <label for="email" id="labelnomer" style="margin-top: 15px;">Email: </label>
+            <input type="text" name="email" id="senharegistro" placeholder={{usuarios.email}}>
+            <br>
+            <label for="senha" id="labelsenhar" style="margin-top: 15px;">Senha: </label>
+            <input type="password" name="senha" id="senharegistro" placeholder="*****">
+            <br>
+            <label for="senha2" id="labelsenhar2" style="margin-top: 15px;">Repita a senha: </label>
+            <input type="password" name="senha2" id="senharegistro" placeholder="*****">
+            <br>
+            <label for="tipo" id="labeltipo" style="margin-top: 15px;">Nivel: </label>
+            <select name="tipo" id="tiporegistro" value="0">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br>
+
+            <button type="submit" id="btn-criar"> Editar </button>
+            <button type="button" id="btn-registro" onclick=deleteUser('{{usuarios._id}}')>Deletar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function deleteUser(userId) {
+        if (confirm('Você tem certeza que deseja deletar este usuário?')) {
+            fetch(`/users/${userId}`, {
+                method: 'DELETE'
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = '/lista-de-usuarios';
+                } else {
+                    alert('Usuário deletado com sucesso.');
+                }
+            })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert('Houve um erro ao deletar o usuário.');
+                });
+        }
+    }
+</script>

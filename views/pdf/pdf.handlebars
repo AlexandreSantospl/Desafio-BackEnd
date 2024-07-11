@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generate PDF</title>
+</head>
+
+<body>
+    <h1>Generate PDF</h1>
+    <form action="/generatepdf" method="post">
+        <label for="content">Pdf:</label>
+
+        <table class="table table-bordered" style="border-color: rgba(0, 0, 0, 0.767);">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each usuarios}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{level}}</td>
+                    <td>{{email}}</td>
+                </tr>
+                {{else}}
+                {{/each}}
+            </tbody>
+        </table>
+        <button type="submit">Generate PDF</button>
+    </form>
+</body>
+
+</html>

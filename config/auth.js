@@ -9,13 +9,12 @@ const Usuario = mongoose.model("usuarios")
 module.exports = function (passport) {
     passport.use(new localStrategy({ usernameField: 'nome', passwordField: 'senha' }, (nome, senha, done) => {
 
-        Usuario.findOne({ nome: nome }).then((Usuario) => {
+        Usuario.findOne({ name: nome }).then((Usuario) => {
             if (!Usuario) {
                 return done(null, false, { message: "Está conta não existe" })
             }
 
-            bcrypt.compare(senha, Usuario.senha, (erro, batem) => {
-
+            bcrypt.compare(senha, Usuario.password, (erro, batem) => {
                 if (batem) {
                     return done(null, Usuario)
                 } else {

@@ -1,6 +1,6 @@
 <div class="bg-beige p-5 rounded-lg m-3" style="background-color: rgb(252, 242, 229);">
     <h1 class="display-4" style="text-align: center;">Bem-Vindo a sua pagina Principal!</h1>
-    <p class="lead" style="text-align: center;">Este é um aplicativo para setor de Compras de uma escola, feito em
+    <p class="lead" style="text-align: center;">Este é um aplicativo para gerenciamento de Usuários, feito em
         JavaScript, Handlebars, Css, Express e Node.Js!.</p>
     <hr class="my-4">
     <br>
@@ -14,33 +14,33 @@
 <div style="display: flex; margin-left: 15px; gap: 38px;">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title" style="text-align: center;">Criar Pedido</h5>
-            <p class="card-text" style="text-align: center; margin-top: 25px">Criar um pedido</p>
-            <p class="card-text" style="text-align: center;">Limite de 9 Itens</p>
-            <a href="/admin/criar/pedido" class="btn btn-primary"
-                style="width: 150px ;margin-left: 20%; margin-top: 10%">Criar Pedido</a>
-        </div>
-    </div>
+            <h5 class="card-title" style="text-align: center;">Criar Usuário</h5>
+            <p class="card-text" style="text-align: center; margin-top: 50px">Cria um usuário</p>
 
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title" style="text-align: center;">Meus Pedidos</h5>
-            <p class="card-text" style="text-align: center; margin-top: 50px">Andamento dos meus pedidos</p>
-
-            <a href="/admin/pedidos/meuspedidos/{{user.nome}}" class="btn btn-primary "
-                style="width: 150px ;margin-left: 20%; margin-top: 15%">Minhas tarefas</a>
-
+            <a href="/criar-usuario" class="btn btn-primary " style="width: 150px ;margin-left: 20%; margin-top: 15%">Criar Usuário
+            </a>
 
         </div>
     </div>
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title" style="text-align: center;">Pedidos</h5>
-            <p class="card-text" style="text-align: center; margin-top: 25px;">Ver pedidos</p>
+            <h5 class="card-title" style="text-align: center;">Listagem de Usuarios</h5>
+            <p class="card-text" style="text-align: center; margin-top: 50px">Todos os usuarios</p>
+
+            <a href="/lista-de-usuarios" class="btn btn-primary " style="width: 150px ;margin-left: 20%; margin-top: 15%">Listar
+                Usuários</a>
+
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">Relatorio de Usuarios</h5>
+            <p class="card-text" style="text-align: center; margin-top: 25px;">Baixar todos Usuários</p>
             <p class="card-text" style="text-align: center;">Acesso Restrito. </p>
-            <a href="/admin/pedidos" class="btn btn-primary"
-                style="width: 150px ;margin-left: 20%; margin-top: 10%">Analisar</a>
+            <a href="/geradorpdf" class="btn btn-primary"
+                style="width: 150px ;margin-left: 20%; margin-top: 10%">Relatorio</a>
         </div>
     </div>
 

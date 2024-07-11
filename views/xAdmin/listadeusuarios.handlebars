@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-body" style="display: flex; margin-left: 20px; gap: 230px; height: 60px">
+        <hr>
+        <h6 style="font-size: 16pt;">Nome</h6>
+        <hr>
+    </div>
+
+</div>
+
+{{#each usuarios}}
+
+<a href="/detalhes-usuario/{{_id}}" style="text-decoration: none;">
+    <div id="formulario" class="card mt-1">
+        <div class="card-body" style="text-align: center; display: flex; gap: 160px; ">
+            <div style="width: 800px; height: 40px; color: black; ">
+                <h6 style="margin-left: -240px;">{{name}}</h6>
+            </div>
+</a>
+    <button class="btn btn-danger" style="margin-left: 160px;" onclick=(deleteUser('{{_id}}'))>Delete</button>
+</div>
+</div>
+
+{{else}}
+
+{{/each}}
+
+
+<script>
+    function deleteUser(userId) {
+        if (confirm('Você tem certeza que deseja deletar este usuário?')) {
+            fetch(`/users/${userId}`, {
+                method: 'DELETE'
+            }).then(response => {
+                    if (response.ok) {
+                        window.location.href = '/lista-de-usuarios';
+                    } else {
+                        alert('Usuário deletado com sucesso.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert('Houve um erro ao deletar o usuário.');
+                });
+        }
+    }
+</script>
