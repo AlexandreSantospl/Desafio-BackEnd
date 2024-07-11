@@ -19,10 +19,10 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 
 ### Rotas Disponíveis
 
-#### Ver todos os usuário
+### Ver todos os usuário
 [GET] http://localhost:8081/users
 
-#### Ver usuário especifico
+### Ver usuário especifico
 [GET] http://localhost:8081/users/:id
 
 ### Criar usuário
