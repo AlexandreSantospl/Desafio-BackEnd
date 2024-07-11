@@ -30,13 +30,13 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 [POST] http://localhost:8081/users/
 
 {
-  "nome": "exemplo", // Não pode ter menos que 4 letras
+  "name": "exemplo", // Não pode ter menos que 4 letras
   
   "email": "exemplo@exemplo",
   
-  "senha": "12345", // As senhas têm que ser iguais
+  "password": "12345", // As senhas têm que ser iguais
   
-  "senha2": "12345",
+  "password2": "12345",
   
   "nivel": 1 | 2 | 3 | 4 | 5
 }
@@ -47,13 +47,13 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 [PUT] http://localhost:8081/users/:id
 
 {
-  "nome": "exemplo", // Não pode ter menos que 4 letras
+  "name": "exemplo", // Não pode ter menos que 4 letras
   
   "email": "exemplo@exemplo",
   
-  "senha": "12345", // As senhas têm que ser iguais
+  "password": "12345", // As senhas têm que ser iguais
   
-  "senha2": "12345",
+  "password2": "12345",
   
   "nivel": 1 | 2 | 3 | 4 | 5
 }
@@ -70,7 +70,7 @@ Um sistema de gerenciamento de usuários construído com Node.js, JavaScript, Ha
 {
     "email": "exemplo@exemplo",
 
-    "senha": "12345"
+    "password": "12345"
 }
 
 (Um token vai ser informado como resposta)

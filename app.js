@@ -89,14 +89,14 @@ app.get("/users/:id", (req, res) => {
 
 //Criar
 app.post("/users", (req, res) => {
-    const { nome, email, senha, nivel } = req.body;
+    const { name, email, password, nivel } = req.body;
 
     let erros = [];
 
-    if (senha !== req.body.senha2) {
+    if (password !== req.body.password2) {
         erros.push({ texto: "Senhas diferentes" });
     }
-    if (nome.length < 4) {
+    if (name.length < 4) {
         erros.push({ texto: "Nome muito curto!" });
     }
     if (email.length < 4) {
@@ -109,14 +109,14 @@ app.post("/users", (req, res) => {
     if (erros.length > 0) {
         res.json({ erros: erros });
     } else {
-        Usuario.findOne({ name: nome }).then((usuario) => {
+        Usuario.findOne({ name: name }).then((usuario) => {
             if (usuario) {
                 res.json({ error: "Já existe um usuário com este nome no nosso sistema" });
             } else {
                 const newUsuario = new Usuario({
-                    name: nome,
+                    name: name,
                     email: email,
-                    password: senha,
+                    password: password,
                     level: nivel
                 });
 
@@ -141,14 +141,14 @@ app.post("/users", (req, res) => {
 
 //Edita um usuario
 app.put("/users/:id", (req, res) => {
-    const { nome, email, senha, nivel } = req.body;
+    const { name, email, password, nivel } = req.body;
 
     let erros = [];
 
-    if (senha !== req.body.senha2) {
+    if (password !== req.body.password2) {
         erros.push({ texto: "Senhas diferentes" });
     }
-    if (nome.length < 4) {
+    if (name.length < 4) {
         erros.push({ texto: "Nome muito curto!" });
     }
     if (email.length < 4) {
@@ -163,9 +163,9 @@ app.put("/users/:id", (req, res) => {
     } else {
         Usuario.findOne({ _id: req.params.id }).then((usuario) => {
             const newUsuario = new Usuario({
-                name: req.body.nome,
+                name: req.body.name,
                 email: req.body.email,
-                password: req.body.senha,
+                password: req.body.password,
                 level: req.body.nivel
             })
 
@@ -177,7 +177,7 @@ app.put("/users/:id", (req, res) => {
                     newUsuario.password = hash
 
 
-                    usuario.name = nome
+                    usuario.name = name
                     usuario.email = email
                     usuario.password = newUsuario.password
                     usuario.level = nivel
