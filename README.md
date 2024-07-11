@@ -1,23 +1,61 @@
-Projeto criado para ser utilizado como Sistema de Setor de Compras de uma escola ou Universidade.
+Projeto criado para ser utilizado como Gerenciador de Usuários.
 
 NodeJs - JavaScript - Handlebars - Css
 
 Sistema de privação de rotas para diferentes tipos de usuarios no sistema;
 
-Aprovação da cotação de pedidos feita somente pelo diretor;
-
-Adicionar produtos e lojas feito somente pelo Administrador do Setor de compras;
-
-Cotação de pedido feita somente pelo Administrador do setor responsavel;
-
 Incriptação de senhas usando bcryptjs;
 
 Login e Registro utilizando Passport e MongoDb;
 
-Campo de visualização de pedidos e status feito pelo usuario;
+Opção para baixar pdf somente para usuários nivel 4 ou superior.
 
-Opção para imprimir somente para todos os pedidos que já estão aprovados pelo diretor.
 
+------------------------------------------
+
+Rotas:
+
+Ver todos os usuário
+[GET] http://localhost:8081/users
+
+Ver usuário especifico
+[GET] http://localhost:8081/users/:id
+
+Criar usuário
+[POST] http://localhost:8081/users/
+{
+    nome: exemplo, (Não pode ter menos que 4 letras)
+    email: exemplo@exemplo,
+    senha: 12345, (As senhas tem que ser iguais)
+    senha2: 12345,
+    nivel: 1 | 2 | 3 | 4 | 5
+}
+
+Editar usuário especifico
+[PUT] http://localhost:8081/users/:id
+{
+    nome: exemplo, (Não pode ter menos que 4 letras)
+    email: exemplo@exemplo,
+    senha: 12345, (As senhas tem que ser iguais)
+    senha2: 12345,
+    nivel: 1 | 2 | 3 | 4 | 5
+}
+
+Deleta usuário especifico
+[PUT] http://localhost:8081/users/:id
+
+
+Faz login
+[POST] http://localhost:8081/login
+{
+    email: exemplo@exemplo,
+    password: 12345
+}
+(Um token vai ser informado como resposta)
+
+Dowload do pdf (Acesso somente nivel 4)
+[POST] http://localhost:8081/users/report
+Headers: [key: Authorization] , [valu: Bearer {token}] (token da resposta do login)
 
 ------------------------------------------
 
@@ -42,6 +80,10 @@ npm install --save bcryptjs
 npm install passport
 
 npm install passport-local
+
+npm install pdfkit
+
+npm install jsonwebtoken
 
 nodemon app.js
 -------------------------------------------
