@@ -15,7 +15,7 @@ module.exports = {
                 return res.sendStatus(403);
             }
 
-            if (user.level <= 4) {
+            if (user.level < 4) {
                 return res.status(403).json({ error: "Permissão negada. Nível 4 requirido." });
             }
 
